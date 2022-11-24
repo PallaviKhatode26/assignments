@@ -1,0 +1,193 @@
+/*1. Input a String S, and check its length and if the length is greater than 4,
+truncate the input String and output the result -
+Input: Ice
+Output: Ice
+Input:Icecream Output:Icec...*/
+
+let s="Icecream"
+console.log( `the length of string is : ${s.length}`);
+let truncate = (s,len) =>{
+if (s.length>len){
+    console.log(`input is : ${s}`);
+    console.log(` output is : ${s.substring(0,len)}...`);
+}
+else{
+    console.log(s);
+}
+}
+truncate(s,4);
+
+ //85  
+//assignment 7/q10.js
+//@@ -0,0 +1,85 @@
+/*Given a String S, achieve following tasks
+a) Convert the String into upper case.
+b) Convert only the first character to uppercase.c) Convert the String into lower case.
+d) Break the string into two halves and swap them.
+e) Count the repeating characters.
+f) Reverse the string*/
+
+function stringopp(choice) {
+    let str="hello world";
+    console.log(`\noriginal string is ${str}\n`);
+    switch(choice)
+{
+    case 1:
+{
+    console.log(`a) Convert the String into upper case.\n`);
+    console.log(str.toUpperCase());
+}
+break;
+    case 2:
+{
+    console.log(`b) Convert only the first character to uppercase\n`);
+    let split=str.split(" ");
+    let temp=" ";
+    for(let i of split){
+    temp=temp+" "+i.replace(i[0],i[0].toUpperCase());
+    }
+    console.log(temp);
+}
+break;
+    case 3:
+    {
+        console.log(`c) Convert the String into lower case.\n`);
+        console.log(str.toLowerCase());
+    }
+break;
+case 4:
+{
+    console.log(`d) Break the string into two halves and swap them.\n`);
+
+    let index = str.indexOf(" ");  
+    let id = str.substr(0, index); 
+    let text = str.substr(index + 1); 
+    let a = id;
+    id=text;
+    text=a;
+    console.log(id,text);
+}
+break;
+
+   case 5: 
+    {
+        console.log("e) Count the repeating characters.\n");
+        const repeatedCharacter = (str) => {
+        for (let i = 0; i < str.length - 1; i++) {
+            for (let j = i + 1; j < str.length; j++) 
+            {
+            if (str[i] === str[j]) {
+                return str[i];
+            }
+            }
+        }
+        return -1
+        };
+        console.log(repeatedCharacter("hello world"));
+    }
+        break;
+case 6:{
+    console.log("f) Reverse the string\n");
+    function ReverseString(str) {
+        return str.split('').reverse().join('')
+     }
+   console.log(  ReverseString("hello world"));
+
+}
+break;
+        default : console.log(" \ninvalid choice");
+}
+}
+stringopp(1);
+stringopp(2);
+stringopp(3);
+stringopp(4);
+stringopp(5);
+stringopp(6);
+stringopp(7);
+ 0  
+//assignment 7/q1js
+//Empty file.
+ //9  
+//assignment 7/q2.js
+//@@ -0,0 +1,9 @@
+/*2. Input a String S with multiple words, and remove whitespaces and
+output the result -
+Input: “Hii Boy”
+Output: “HiiBoy”*/
+
+let string = "hello world";
+console.log(`Input is: ${string}`);
+let res = string.replace(/\s+/g, "");
+console.log(` output is : ${res}`);
+ 11  
+//assignment 7/q3.js
+//@@ -0,0 +1,11 @@
+/*3. Input a String S with two words, and replace first word with second word
+and display the result -
+Input: “Hii Boy”
+Output: “Boy Hii”*/
+let str="hello world";
+console.log(str[0]);
+console.log(str[1]);
+let temp=str[0];
+str[0]=str[1];
+str[1]=temp;
+console.log(temp);
+ 8  
+//assignment 7/q4.js
+//@@ -0,0 +1,8 @@
+/*4. Input a String S with a word, and replace character “a” with “x” and
+display the result -
+Input: “apple”
+Output: “xpple”*/
+let p = 'apple';
+console.log(`input is:${p}`);
+console.log(` output is: ${p.replace('a', 'x')}`);
+
+ 18  
+//assignment 7/q5-q6-q7.txt
+//@@ -0,0 +1,18 @@
+//5) What string method can be used to convert string into array ?
+//Ans= The string is converted into array split() method is used.
+    str="hello";
+    console.log(typeof(str));
+    a=str.Array
+    console.log(typeof(a));
+
+//6)  What string method can be used to check the occurrence of a specified
+//text in a string?
+//Ans= includes() method is used to check the occurrence of a specified text in a string.
+    //example:
+            str="hello"
+            console.log(str.includes("o"));
+
+//7) How can you break a string to a newline in Javascript ?
+//Ans=using "\n" we can break a string to a newline in Javascript.
+  //  example:
+        console.log("hello \n world");
+ 20  
+//assignment 7/q8.js
+//@@ -0,0 +1,20 @@
+/*8. Write a Javascript function to test whether the first character of a string
+is lowercase.*/
+
+function lowercase(str)
+{
+   regexp = /^[a-z]/;
+   if (regexp.test(str))
+    {
+      console.log("String's first character is lowercase");
+    } 
+    else
+    {
+      console.log("String's first character is not lowercase");
+    }
+}
+lowercase('HELLO');
+lowercase('hello');
+
+
+
+
+
